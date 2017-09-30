@@ -1,9 +1,9 @@
 #  http://www.taodabai.com/68228096.html
 #  最小二乘法通过最小化误差的平方和寻找数据的最佳函数匹配
-# 一般两个变量，斜率和常数
-# 对这两个变量求偏导，得到两个方程，然后就可以算出两个未知量了
-# y = mx + b
-# m is slope , b is y-intercept
+#  一般两个变量，斜率和常数
+#  对这两个变量求偏导，得到两个方程，然后就可以算出两个未知量了
+#  y = mx + b
+#  m is slope , b is y-intercept
 
 def compute_error_for_line_given_poinst(b,m,cordinates):
     totalError = 0
