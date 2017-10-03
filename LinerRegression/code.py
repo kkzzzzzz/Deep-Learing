@@ -12,13 +12,11 @@ def step_gradient(b_current, m_current, points, learingRate):
         x  = points[i][0]
         y  = points[i][1]
         # 损失函数，对b求导
-        b_gradient += -2 * (y - ((m_current * x + b_current)))
+        b_gradient += -(2/N) * (y - ((m_current * x + b_current)))
         # 损失函数，对m求导
-        m_gradient += -2 * x * (y - (m_current * x) + b_current)
-    b_gradient = b_gradient / N
-    m_gradient = m_gradient / N
-    new_b = b_gradient - (learingRate * b_gradient)
-    new_m = m_gradient - (learingRate * m_gradient)
+        m_gradient += -(2/N) * x * (y - (m_current * x) + b_current)
+    new_b = b_current - (learingRate * b_gradient)
+    new_m = m_current - (learingRate * m_gradient)
     return [new_b, new_m]
 
 
@@ -27,8 +25,9 @@ def gradient_descent_runner(points, start_b, start_m, learing_rate, num_iteratio
     m = start_m
     for i in range(num_iterations):
         b, m = step_gradient(b, m, points, learing_rate)
+        print [b,m]
     return [b, m]
 
 
-s = gradient_descent_runner(wheat_and_bread, 1, 1, 0.01, 100)
+s = gradient_descent_runner(wheat_and_bread, 1, 1, 0.01, 1000)
 print s
