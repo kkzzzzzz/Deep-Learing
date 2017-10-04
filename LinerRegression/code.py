@@ -29,5 +29,5 @@ def gradient_descent_runner(points, start_b, start_m, learing_rate, num_iteratio
     return [b, m]
 
 
-s = gradient_descent_runner(wheat_and_bread, 1, 1, 0.01, 1000)
+s = gradient_descent_runner(wheat_and_bread, 1, 1, 0.01, 100)
 print s
